@@ -1,0 +1,28 @@
+name: SupplyNetwork tests
+
+on:
+  push:
+    paths:
+      - "Sources/**"
+      - "Tests/**"
+      - "Package.swift"
+      - "Package.resolved"
+      - ".github/workflows/tests.yml"
+  pull_request:
+    paths:
+      - "Sources/**"
+      - "Tests/**"
+      - "Package.swift"
+      - "Package.resolved"
+      - ".github/workflows/tests.yml"
+
+jobs:
+  test:
+    # TODO: Confirm the runner image ships a recent enough Xcode, or pin e.g. macos-26.
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Show toolchain
+        run: swift --version
+      - name: Run tests
+        run: swift test
