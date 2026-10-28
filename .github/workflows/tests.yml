@@ -18,7 +18,7 @@ on:
 
 jobs:
   test:
-    # TODO: Confirm the runner image ships a recent enough Xcode, or pin e.g. macos-26.
+    # Plain Swift logic, so the stable image is enough. Move to xcode-27 if this package needs the iOS 27 SDK.
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4

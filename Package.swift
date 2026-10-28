@@ -4,8 +4,8 @@ import PackageDescription
 
 let package = Package(
     name: "SupplyNetwork",
-    // TODO: Set the minimum iOS version once the Apple Intelligence requirement is confirmed.
-    // platforms: [.iOS(.v_TODO)],
+    // iOS 27 is the minimum, for Apple Intelligence. The string form works with tools version 6.2.
+    platforms: [.iOS("27.0")],
     products: [
         .library(name: "SupplyNetwork", targets: ["SupplyNetwork"]),
     ],
